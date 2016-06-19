@@ -1,13 +1,13 @@
 {
+  "plugins": ["react"],
+
+  "extends": ["standard", "standard-react"],
+
   "env": {
     "browser": true,
     "node": true,
     "es6": true
   },
-
-  "plugins": ["react"],
-
-  "extends": ["standard", "standard-react"],
 
   "rules": {
     // Allow dangling commas for better clarity in diffs
