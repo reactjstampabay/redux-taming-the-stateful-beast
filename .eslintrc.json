@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+
+  "plugins": ["react"],
+
+  "extends": ["standard", "standard-react"],
+
+  "rules": {
+    // Allow dangling commas for better clarity in diffs
+    "comma-dangle": [2, "always-multiline"],
+
+    // Apply Semistandard semicolon rules independently to avoid it as a
+    // dependency if team decides that semicolons are desired
+    "semi": [2, "always"],
+    "no-extra-semi": 2,
+    "semi-spacing": [2, { "before": false, "after": true }],
+
+    // ES6 & immutable style rules
+    "no-var": 2,
+    "no-param-reassign": 2,
+		"prefer-arrow-callback": 2,
+    "prefer-spread": 2,
+    "prefer-const": 2,
+
+    // Extra React rules not provided by standard-react
+    "react/react-in-jsx-scope": 2,
+    "jsx-quotes": [2, "prefer-single"],
+
+    // disable propTypes validation due to using recompose & it not being
+    // compatible with setting propTypes through higher order components
+    // remove this line later if you stop using recompose
+    "react/prop-types": 0
+  }
+}
