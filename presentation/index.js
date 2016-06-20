@@ -1,6 +1,6 @@
 // Import React
 import React, { Component } from 'react';
-import { pure } from 'recompose';
+// import { pure } from 'recompose';
 
 // Import Spectacle Core tags
 import {
@@ -38,12 +38,9 @@ import Interactive from '../assets/interactive';
 // Require CSS
 require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
+require('../assets/presentation-styles.css');
 
 const images = {
-  city: require('../assets/city.jpg').replace('/', ''),
-  kat: require('../assets/kat.png').replace('/', ''),
-  logo: require('../assets/formidable-logo.svg').replace('/', ''),
-  markdown: require('../assets/markdown.png').replace('/', ''),
   reduxLogoTitleDark: require('../assets/redux-logo-title-dark.png').replace('/', ''),
   reduxLogoTitleLight: require('../assets/redux-logo-title-light.png').replace('/', ''),
   reduxLogoPNG: require('../assets/redux-logo.png').replace('/', ''),
@@ -51,6 +48,9 @@ const images = {
   wat: require('../assets/wat.png').replace('/', ''),
   bruceLeeLimits: require('../assets/bruce-lee-limits.jpg').replace('/', ''),
   bruceLeeAbsorb: require('../assets/bruce-lee-absorb.jpg').replace('/', ''),
+  rootOfAllEvil: require('../assets/yehuda-katz-on-mutable-state.jpg').replace('/', ''),
+  applause: require('../assets/applause.gif').replace('/', ''),
+  carlSaganOpenMind: require('../assets/carl-sagan-open-mind.jpg').replace('/', ''),
 };
 
 preloader(images);
@@ -72,6 +72,9 @@ class Presentation extends Component {
               Taming the Stateful Beast
             </Heading>
           </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.rootOfAllEvil} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
               "Redux is a predictable state
@@ -81,7 +84,7 @@ class Presentation extends Component {
             </Heading>
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.wat} margin='-75px auto 0 auto' height='700px' />
+            <Image src={images.wat} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
@@ -125,37 +128,39 @@ class Presentation extends Component {
             </List>
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.bruceLeeLimits} margin='0 auto' height='500px' />
+            <Image src={images.bruceLeeLimits} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
-            <Heading size={1.5} caps fit textColor='secondary' textFont='primary'>
+            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
               Pushing boundaries & rethinking best practices
             </Heading>
-            <Heading size={1.5} caps fit textColor='secondary' textFont='primary'>
+            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
                is what the React community is all about.
             </Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
-              Going Further
+              Going Down the Rabbit Hole....
             </Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <List>
-              <ListItem>Future Talk: Getting More Functional & Immutable with React</ListItem>
-              <Appear><ListItem>Look into immutable data structures for JS: Immutable.js, Mori, etc.</ListItem></Appear>
-              <Appear><ListItem>Learn about Higher Order Components & try Recompose</ListItem></Appear>
-              <Appear><ListItem>Try more advanced middleware: redux-saga, redux-rx, etc.</ListItem></Appear>
-              <Appear><ListItem>Try state management alternatives: Mobx, reactive streams (like RxJS or most.js), etc.</ListItem></Appear>
-              <Appear><ListItem>Look to other languages & frameworks for ideas: Elm, PureScript, Cycle.js, etc.</ListItem></Appear>
+              <ListItem>Future Talk: <br />&nbsp;&nbsp; &nbsp;Going Further with FP & Immutability in React & Redux</ListItem>
+              <Appear><ListItem>Complimentary libraries: <a href='https://github.com/acdlite/recompose'>recompose</a>, <a href='https://github.com/facebook/immutable-js'>immutable-js</a>, etc.</ListItem></Appear>
+              <Appear><ListItem>More advanced middleware: <a href='https://github.com/yelouafi/redux-saga'>redux-saga</a>, <a href='https://github.com/acdlite/redux-rx'>redux-rx</a>, etc.</ListItem></Appear>
+              <Appear><ListItem>State management alternatives: <a href='https://github.com/mobxjs/mobx'>mobx</a>, <a href='https://github.com/ReactiveX/rxjs'>rxjs</a>, <a href='https://github.com/cujojs/most'>most</a>, <a href='https://github.com/staltz/xstream'>xstream</a>, etc.</ListItem></Appear>
+              <Appear><ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp; &nbsp;<a href='http://cycle.js.org/'>Cycle.js</a>, <a href='http://clojure.org/about/clojurescript'>ClojureScript</a> & <a href='https://github.com/omcljs/om'>Om</a>, <a href='http://elm-lang.org/'>Elm</a>, <a href='http://www.purescript.org/'>PureScript</a>, <a href='https://facebook.github.io/reason/'>Reason</a>, etc.</ListItem></Appear>
             </List>
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.bruceLeeAbsorb} margin='0 auto' height='500px' />
+            <Image src={images.carlSaganOpenMind} margin='-50px auto 0 auto' height='706px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.bruceLeeAbsorb} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
-            <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
-              One More Thing...
+            <Heading size={1} caps fit lineHeight={1.5} textColor='secondary'>
+              And an announcement...
             </Heading>
             <Appear>
               <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
@@ -163,10 +168,13 @@ class Presentation extends Component {
               </Heading>
             </Appear>
           </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.applause} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
         </Deck>
       </Spectacle>
     );
   }
 }
 
-export default pure(Presentation);
+export default Presentation;
