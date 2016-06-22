@@ -164,6 +164,9 @@ class Presentation extends Component {
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.bruceLeeAbsorb} margin='-50px auto 0 auto' height='700px' />
           </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.applause} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Questions?
@@ -205,9 +208,6 @@ class Presentation extends Component {
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.thatsAllFolks} margin='-50px auto 0 auto' height='700px' />
-          </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.applause} margin='-50px auto 0 auto' height='700px' />
           </Slide>
         </Deck>
       </Spectacle>
