@@ -1,44 +1,44 @@
 // Import React
-import React, { Component } from 'react';
-// import { pure } from 'recompose';
+import React, { Component } from 'react'
+// import { pure } from 'recompose'
 
 // Import Spectacle Core tags
 import {
   Appear,
-  BlockQuote,
-  Cite,
-  CodePane,
+//  BlockQuote,
+//  Cite,
+//  CodePane,
   Deck,
-  Fill,
+//  Fill,
   Heading,
   Image,
-  Layout,
-  Link,
+//  Layout,
+//  Link,
   ListItem,
   List,
-  Markdown,
-  Quote,
+//  Markdown,
+//  Quote,
   Slide,
   Spectacle,
-  Text,
-} from 'spectacle';
+//  Text,
+} from 'spectacle'
 
 // Import code presentation component
-import CodeSlide from 'spectacle-code-slide';
+// import CodeSlide from 'spectacle-code-slide'
 
 // Import image preloader util
-import preloader from 'spectacle/lib/utils/preloader';
+import preloader from 'spectacle/lib/utils/preloader'
 
 // Import theme
-import createTheme from 'spectacle/lib/themes/default';
+import createTheme from 'spectacle/lib/themes/default'
 
 // Import custom component
-import Interactive from '../assets/interactive';
+// import Interactive from '../assets/interactive'
 
 // Require CSS
-require('normalize.css');
-require('spectacle/lib/themes/default/index.css');
-require('../assets/presentation-styles.css');
+require('normalize.css')
+require('spectacle/lib/themes/default/index.css')
+require('../assets/presentation-styles.css')
 
 const images = {
   reduxLogoTitleDark: require('../assets/redux-logo-title-dark.png').replace('/', ''),
@@ -52,15 +52,15 @@ const images = {
   applause: require('../assets/applause.gif').replace('/', ''),
   carlSaganOpenMind: require('../assets/carl-sagan-open-mind.jpg').replace('/', ''),
   thatsAllFolks: require('../assets/thats-all-folks.png').replace('/', ''),
-};
+}
 
-preloader(images);
+preloader(images)
 
 const theme = createTheme({
   primary: '#754fb5',
   secondary: '#FFF',
   tertiary: '#000',
-});
+})
 
 class Presentation extends Component {
   render () {
@@ -153,7 +153,7 @@ class Presentation extends Component {
             <List>
               <ListItem>Future Talk: <br />&nbsp;&nbsp; &nbsp;Going Further with FP & Immutability in React & Redux</ListItem>
               <Appear><ListItem>Complimentary libraries: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/acdlite/recompose'>recompose</a>, <a href='https://github.com/facebook/immutable-js'>immutable-js</a>, etc.</ListItem></Appear>
-              <Appear><ListItem>More advanced middleware: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/yelouafi/redux-saga'>redux-saga</a>,  <a href='https://github.com/redux-observable/redux-observable'>redux-observable</a>, <a href='https://github.com/acdlite/redux-rx'>redux-rx</a>, etc.</ListItem></Appear>
+              <Appear><ListItem>More advanced middleware: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/yelouafi/redux-saga'>redux-saga</a>, <a href='https://github.com/redux-observable/redux-observable'>redux-observable</a>, <a href='https://github.com/acdlite/redux-rx'>redux-rx</a>, etc.</ListItem></Appear>
               <Appear><ListItem>State management alternatives: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/mobxjs/mobx'>mobx</a>, reactive streams (<a href='https://github.com/ReactiveX/rxjs'>rxjs</a>, <a href='https://github.com/cujojs/most'>most</a>, <a href='https://github.com/staltz/xstream'>xstream</a>), etc.</ListItem></Appear>
               <Appear><ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp; &nbsp;<a href='http://cycle.js.org/'>Cycle.js</a>, <a href='http://clojure.org/about/clojurescript'>ClojureScript</a> & <a href='https://github.com/omcljs/om'>Om</a>, <a href='http://elm-lang.org/'>Elm</a>, <a href='http://www.purescript.org/'>PureScript</a>, <a href='https://facebook.github.io/reason/'>Reason</a>, etc.</ListItem></Appear>
             </List>
@@ -211,8 +211,8 @@ class Presentation extends Component {
           </Slide>
         </Deck>
       </Spectacle>
-    );
+    )
   }
 }
 
-export default Presentation;
+export default Presentation

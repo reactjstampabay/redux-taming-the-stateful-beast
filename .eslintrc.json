@@ -15,9 +15,9 @@
 
     // Apply Semistandard semicolon rules independently to avoid it as a
     // dependency if team decides that semicolons are desired
-    "semi": [2, "always"],
-    "no-extra-semi": 2,
-    "semi-spacing": [2, { "before": false, "after": true }],
+    // "semi": [2, "always"],
+    // "no-extra-semi": 2,
+    // "semi-spacing": [2, { "before": false, "after": true }],
 
     // ES6 & immutable style rules
     "no-var": 2,
