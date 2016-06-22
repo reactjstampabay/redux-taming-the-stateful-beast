@@ -51,6 +51,7 @@ const images = {
   rootOfAllEvil: require('../assets/yehuda-katz-on-mutable-state.jpg').replace('/', ''),
   applause: require('../assets/applause.gif').replace('/', ''),
   carlSaganOpenMind: require('../assets/carl-sagan-open-mind.jpg').replace('/', ''),
+  thatsAllFolks: require('../assets/thats-all-folks.png').replace('/', ''),
 };
 
 preloader(images);
@@ -139,16 +140,21 @@ class Presentation extends Component {
             </Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
-            <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
-              Going Down the Rabbit Hole....
+            <Heading size={1} caps fit lineHeight={1} textColor='primary'>
+              Interested in diving deeper?
+            </Heading>
+          </Slide>
+          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+            <Heading size={1} caps fit lineHeight={1} textColor='primary'>
+              Down the <span style={{ color: theme.screen.colors.secondary }}>rabbit</span> hole we go...
             </Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <List>
               <ListItem>Future Talk: <br />&nbsp;&nbsp; &nbsp;Going Further with FP & Immutability in React & Redux</ListItem>
-              <Appear><ListItem>Complimentary libraries: <a href='https://github.com/acdlite/recompose'>recompose</a>, <a href='https://github.com/facebook/immutable-js'>immutable-js</a>, etc.</ListItem></Appear>
-              <Appear><ListItem>More advanced middleware: <a href='https://github.com/yelouafi/redux-saga'>redux-saga</a>,  <a href='https://github.com/redux-observable/redux-observable'>redux-observable</a>, <a href='https://github.com/acdlite/redux-rx'>redux-rx</a>, etc.</ListItem></Appear>
-              <Appear><ListItem>State management alternatives: <a href='https://github.com/mobxjs/mobx'>mobx</a>, <a href='https://github.com/ReactiveX/rxjs'>rxjs</a>, <a href='https://github.com/cujojs/most'>most</a>, <a href='https://github.com/staltz/xstream'>xstream</a>, etc.</ListItem></Appear>
+              <Appear><ListItem>Complimentary libraries: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/acdlite/recompose'>recompose</a>, <a href='https://github.com/facebook/immutable-js'>immutable-js</a>, etc.</ListItem></Appear>
+              <Appear><ListItem>More advanced middleware: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/yelouafi/redux-saga'>redux-saga</a>,  <a href='https://github.com/redux-observable/redux-observable'>redux-observable</a>, <a href='https://github.com/acdlite/redux-rx'>redux-rx</a>, etc.</ListItem></Appear>
+              <Appear><ListItem>State management alternatives: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/mobxjs/mobx'>mobx</a>, reactive streams (<a href='https://github.com/ReactiveX/rxjs'>rxjs</a>, <a href='https://github.com/cujojs/most'>most</a>, <a href='https://github.com/staltz/xstream'>xstream</a>), etc.</ListItem></Appear>
               <Appear><ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp; &nbsp;<a href='http://cycle.js.org/'>Cycle.js</a>, <a href='http://clojure.org/about/clojurescript'>ClojureScript</a> & <a href='https://github.com/omcljs/om'>Om</a>, <a href='http://elm-lang.org/'>Elm</a>, <a href='http://www.purescript.org/'>PureScript</a>, <a href='https://facebook.github.io/reason/'>Reason</a>, etc.</ListItem></Appear>
             </List>
           </Slide>
@@ -159,14 +165,46 @@ class Presentation extends Component {
             <Image src={images.bruceLeeAbsorb} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
-            <Heading size={1} caps fit lineHeight={1.5} textColor='secondary'>
+            <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
+              Questions?
+            </Heading>
+          </Slide>
+          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+            <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
+              Next RehackedLab on Redux on July 6th
+            </Heading>
+          </Slide>
+          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+            <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
+              Next talk on July 27th
+            </Heading>
+            <Heading size={1} fit lineHeight={1.5} textColor='secondary'>
+              Higher Order Components by James Schimmoeller
+            </Heading>
+          </Slide>
+          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+            <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               And an announcement...
             </Heading>
             <Appear>
-              <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
+              <Heading size={1} caps fit lineHeight={1.5} textColor='secondary'>
                 Lightning Talks!
               </Heading>
             </Appear>
+          </Slide>
+          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+            <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
+              A few potential topic ideas, lightning or otherwise
+            </Heading>
+            <List>
+              <ListItem>Data Visualization with React</ListItem>
+              <ListItem>Animation with React</ListItem>
+              <ListItem>CSS in JS</ListItem>
+              <ListItem>Falcor, GraphQL, Relay, etc.</ListItem>
+            </List>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.thatsAllFolks} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.applause} margin='-50px auto 0 auto' height='700px' />
