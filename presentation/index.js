@@ -147,7 +147,7 @@ class Presentation extends Component {
             <List>
               <ListItem>Future Talk: <br />&nbsp;&nbsp; &nbsp;Going Further with FP & Immutability in React & Redux</ListItem>
               <Appear><ListItem>Complimentary libraries: <a href='https://github.com/acdlite/recompose'>recompose</a>, <a href='https://github.com/facebook/immutable-js'>immutable-js</a>, etc.</ListItem></Appear>
-              <Appear><ListItem>More advanced middleware: <a href='https://github.com/yelouafi/redux-saga'>redux-saga</a>, <a href='https://github.com/acdlite/redux-rx'>redux-rx</a>, etc.</ListItem></Appear>
+              <Appear><ListItem>More advanced middleware: <a href='https://github.com/yelouafi/redux-saga'>redux-saga</a>,  <a href='https://github.com/redux-observable/redux-observable'>redux-observable</a>, <a href='https://github.com/acdlite/redux-rx'>redux-rx</a>, etc.</ListItem></Appear>
               <Appear><ListItem>State management alternatives: <a href='https://github.com/mobxjs/mobx'>mobx</a>, <a href='https://github.com/ReactiveX/rxjs'>rxjs</a>, <a href='https://github.com/cujojs/most'>most</a>, <a href='https://github.com/staltz/xstream'>xstream</a>, etc.</ListItem></Appear>
               <Appear><ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp; &nbsp;<a href='http://cycle.js.org/'>Cycle.js</a>, <a href='http://clojure.org/about/clojurescript'>ClojureScript</a> & <a href='https://github.com/omcljs/om'>Om</a>, <a href='http://elm-lang.org/'>Elm</a>, <a href='http://www.purescript.org/'>PureScript</a>, <a href='https://facebook.github.io/reason/'>Reason</a>, etc.</ListItem></Appear>
             </List>
