@@ -110,7 +110,7 @@ class Presentation extends Component {
             </Heading>
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.unidirectionalDataFlow} margin='-50px auto 0 auto' height='700px' />
+            <Image src={images.unidirectionalDataFlow} margin='0px auto 0 auto' height='500px' />
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
