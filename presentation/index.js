@@ -135,6 +135,18 @@ class Presentation extends Component {
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
+              Learning Resources
+            </Heading>
+            <List>
+              <ListItem>Read the official docs: <a href='http://redux.js.org/'>http://redux.js.org/</a></ListItem>
+              <ListItem>Watch Dan Abramov's Videos on Egghead.io: <br />&nbsp;&nbsp; &nbsp;
+                <a href='https://egghead.io/courses/getting-started-with-redux'>Getting Started with Redux</a> <br />&nbsp;&nbsp; &nbsp;
+                <a href='https://egghead.io/courses/building-react-applications-with-idiomatic-redux'>Building React Applications with Idiomatic Redux</a>
+              </ListItem>
+            </List>
+          </Slide>
+          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+            <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Recommendations
             </Heading>
             <List>
