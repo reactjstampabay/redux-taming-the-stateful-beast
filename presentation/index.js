@@ -46,6 +46,7 @@ const images = {
   reduxLogoPNG: require('../assets/redux-logo.png').replace('/', ''),
   reduxLogoSVG: require('../assets/redux-logo.svg').replace('/', ''),
   wat: require('../assets/wat.png').replace('/', ''),
+  jackieChanWat: require('../assets/jackie-chan-wat.jpg').replace('/', ''),
   bruceLeeLimits: require('../assets/bruce-lee-limits.jpg').replace('/', ''),
   bruceLeeAbsorb: require('../assets/bruce-lee-absorb.jpg').replace('/', ''),
   rootOfAllEvil: require('../assets/yehuda-katz-on-mutable-state.jpg').replace('/', ''),
@@ -70,14 +71,6 @@ class Presentation extends Component {
     return (
       <Spectacle theme={theme}>
         <Deck transition={['zoom', 'slide']} transitionDuration={500}>
-          {/*
-            <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.reduxLogoTitleLight} margin='0 auto' height='400px' />
-            <Heading size={1} fit caps lineHeight={1} textColor='secondary' textFont='primary' margin='-50px auto 0 auto' >
-              Taming the Stateful Beast
-            </Heading>
-          </Slide>
-          */}
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.talkLogo} margin='-80px auto 0 auto' height='800px' />
           </Slide>
@@ -85,14 +78,6 @@ class Presentation extends Component {
             <Image src={images.rootOfAllEvil} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['slide']} bgColor='tertiary'>
-            {/*
-              <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              "Redux is a predictable state
-            </Heading>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              container for JavaScript apps."
-            </Heading>
-            */}
             <BlockQuote textColor='primary'>
               <Quote textColor='primary'>Redux is a predictable state container for JavaScript apps.</Quote>
               <Cite textColor='secondary'>redux.js.org</Cite>
@@ -100,6 +85,9 @@ class Presentation extends Component {
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.wat} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.jackieChanWat} margin='0 auto' height='500px' />
           </Slide>
           <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.noMoreVInMVC} margin='-100px auto 0 auto' height='800px' />
@@ -199,7 +187,6 @@ class Presentation extends Component {
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>Future Talk</Heading>
             <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Going Further with Functional</Heading>
             <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Programming & Immutability in React & Redux</Heading>
-            <Heading size={1} caps fit lineHeight={1} textColor='secondary'></Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>In the meantime...</Heading>
