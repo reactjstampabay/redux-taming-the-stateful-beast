@@ -165,17 +165,17 @@ class Presentation extends Component {
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.bruceLeeLimits} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} caps fit textColor='primary' textFont='primary'>
               Rethinking dogma
             </Heading>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              & innovating
+            <Heading size={1} caps fit textColor='primary' textFont='primary'>
+              & <span style={{ color: theme.screen.colors.secondary }}>innovating</span>
             </Heading>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+            <Heading size={1} caps fit textColor='primary' textFont='primary'>
                is what the React community
             </Heading>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+            <Heading size={1} caps fit textColor='primary' textFont='primary'>
                is all about
             </Heading>
           </Slide>
