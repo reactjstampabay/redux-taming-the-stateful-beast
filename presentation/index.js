@@ -189,20 +189,17 @@ class Presentation extends Component {
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>
-              Down the
+              Tumbling down the
             </Heading>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>
-              <span style={{ color: theme.screen.colors.secondary }}>rabbit</span>
-            </Heading>
-            <Heading size={1} caps fit lineHeight={1} textColor='primary'>
-               hole we go...
+              <span style={{ color: theme.screen.colors.secondary }}>rabbit</span> hole...
             </Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>Future Talk</Heading>
-            <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Going Further with</Heading>
-            <Heading size={1} caps fit lineHeight={1} textColor='secondary'>FP & Immutability</Heading>
-            <Heading size={1} caps fit lineHeight={1} textColor='secondary'>in React & Redux</Heading>
+            <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Going Further with Functional</Heading>
+            <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Programming & Immutability in React & Redux</Heading>
+            <Heading size={1} caps fit lineHeight={1} textColor='secondary'></Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>In the meantime...</Heading>
@@ -246,7 +243,10 @@ class Presentation extends Component {
               Next talk on July 27th
             </Heading>
             <Heading size={1} fit lineHeight={1.5} textColor='secondary'>
-              Higher Order Components by James Schimmoeller
+              Higher Order Components
+            </Heading>
+            <Heading size={1} fit lineHeight={1.5} textColor='primary'>
+              by James Schimmoeller
             </Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
