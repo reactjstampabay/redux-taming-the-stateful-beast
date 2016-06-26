@@ -1,3 +1,9 @@
 a {
   text-decoration: none;
+  color: #00d8ff;
+  opacity: 1;
+}
+
+a:hover {
+  opacity: 0.8;
 }

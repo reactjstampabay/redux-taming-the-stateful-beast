@@ -66,6 +66,7 @@ const images = {
 
 const urls = {
   reduxDocs: 'http://redux.js.org/',
+  reduxExamples: 'https://github.com/reactjs/redux/tree/master/examples',
   eggheadRedux01: 'https://egghead.io/courses/getting-started-with-redux',
   eggheadRedux02: 'https://egghead.io/courses/building-react-applications-with-idiomatic-redux',
   recompose: 'https://github.com/acdlite/recompose',
@@ -228,7 +229,7 @@ class Presentation extends Component {
                 </ListItem>
               </Appear>
               <Appear>
-                <ListItem>Check out <a href='https://github.com/reactjs/redux/tree/master/examples'>the examples in the redux GitHub repository</a></ListItem>
+                <ListItem>Check out <a href={urls.reduxExamples}>the examples in the redux GitHub repository</a></ListItem>
               </Appear>
             </List>
           </Slide>
