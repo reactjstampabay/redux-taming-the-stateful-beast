@@ -20,7 +20,7 @@ import {
   Quote,
   Slide,
   Spectacle,
-//  Text,
+  Text,
 } from 'spectacle'
 
 // Import code presentation component
@@ -56,6 +56,37 @@ const images = {
   talkLogo: require('../assets/talk-logo.png').replace('/', ''),
   noMoreVInMVC: require('../assets/no-more-v-in-mvc.png').replace('/', ''),
   unidirectionalDataFlow: require('../assets/unidirectional-data-flow.png').replace('/', ''),
+  rxjsVsRedux01: require('../assets/rxjs-vs-redux-01.png').replace('/', ''),
+  rxjsVsRedux02: require('../assets/rxjs-vs-redux-02.png').replace('/', ''),
+  danAbramov: require('../assets/dan-abramov.png').replace('/', ''),
+  andrewClark: require('../assets/andrew-clark.png').replace('/', ''),
+  fluxDiagram: require('../assets/flux-diagram.png').replace('/', ''),
+  reduxDiagram: require('../assets/redux-diagram.png').replace('/', ''),
+}
+
+const urls = {
+  reduxDocs: 'http://redux.js.org/',
+  eggheadRedux01: 'https://egghead.io/courses/getting-started-with-redux',
+  eggheadRedux02: 'https://egghead.io/courses/building-react-applications-with-idiomatic-redux',
+  recompose: 'https://github.com/acdlite/recompose',
+  reduxLoop: 'https://github.com/raisemarketplace/redux-loop',
+  reselect: 'https://github.com/reactjs/reselect',
+  normalizr: 'https://github.com/paularmstrong/normalizr',
+  immutableJS: 'https://github.com/facebook/immutable-js',
+  reduxSaga: 'https://github.com/yelouafi/redux-saga',
+  reduxObservable: 'https://github.com/redux-observable/redux-observable',
+  reduxRx: 'https://github.com/acdlite/redux-rx',
+  relay: 'https://github.com/facebook/relay',
+  mobx: 'https://github.com/mobxjs/mobx',
+  rxjs: 'https://github.com/ReactiveX/rxjs',
+  most: 'https://github.com/cujojs/most',
+  xstream: 'https://github.com/staltz/xstream',
+  cycle: 'http://cycle.js.org/',
+  clojureScript: 'http://clojure.org/about/clojurescript',
+  om: 'https://github.com/omcljs/om',
+  elm: 'http://elm-lang.org/',
+  pureScript: 'http://www.purescript.org/',
+  reason: 'https://facebook.github.io/reason/',
 }
 
 preloader(images)
@@ -83,7 +114,7 @@ class Presentation extends Component {
               <Cite textColor='secondary'>redux.js.org</Cite>
             </BlockQuote>
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.wat} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
@@ -92,13 +123,17 @@ class Presentation extends Component {
           <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.noMoreVInMVC} margin='-100px auto 0 auto' height='800px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              Talk about Flux here.
-            </Heading>
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.fluxDiagram} margin='0 auto 0 auto' height='500px' />
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.unidirectionalDataFlow} margin='0px auto 0 auto' height='500px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.danAbramov} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.andrewClark} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
@@ -108,10 +143,48 @@ class Presentation extends Component {
               Flummox, NuclearJS, & The Elm Architecture
             </Heading>
           </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.reduxDiagram} margin='0px auto 0 auto' height='500px' />
+          </Slide>
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              Go over the 3 principles of Redux
+              The 3 principles of Redux
             </Heading>
+            <List>
+              <Appear>
+                <ListItem>Single source of truth</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>State is read-only</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>Changes are made with pure functions</ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide transition={['slide']} bgColor='primary'>
+            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+              Single source of truth
+            </Heading>
+            <Text size={1} caps fit textColor='secondary' textFont='primary'>
+              The state of your whole application is stored in an object tree within a single store.
+            </Text>
+          </Slide>
+          <Slide transition={['slide']} bgColor='primary'>
+            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+              State is read-only
+            </Heading>
+            <Text size={1} caps fit textColor='secondary' textFont='primary'>
+              The only way to mutate the state is to emit an action, an object describing what happened.
+            </Text>
+          </Slide>
+          <Slide transition={['slide']} bgColor='primary'>
+            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+              Changes are made with pure functions
+            </Heading>
+            <Text size={1} caps fit textColor='secondary' textFont='primary'>
+              To specify how the state tree is transformed by actions, you write pure reducers.
+            </Text>
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
@@ -127,12 +200,12 @@ class Presentation extends Component {
             </Heading>
             <List>
               <Appear>
-                <ListItem>Read the official docs: <a href='http://redux.js.org/'>redux.js.org</a></ListItem>
+                <ListItem>Read the official docs: <a href={urls.reduxDocs}>redux.js.org</a></ListItem>
               </Appear>
               <Appear>
                 <ListItem>Watch Dan Abramov's Videos on Egghead.io: <br />&nbsp;&nbsp; &nbsp;
-                  <a href='https://egghead.io/courses/getting-started-with-redux'>Getting Started with Redux</a> <br />&nbsp;&nbsp; &nbsp;
-                  <a href='https://egghead.io/courses/building-react-applications-with-idiomatic-redux'>Building React Applications with Idiomatic Redux</a>
+                  <a href={urls.eggheadRedux01}>Getting Started with Redux</a> <br />&nbsp;&nbsp; &nbsp;
+                  <a href={urls.eggheadRedux02}>Building React Applications with Idiomatic Redux</a>
                 </ListItem>
               </Appear>
               <Appear>
@@ -145,9 +218,15 @@ class Presentation extends Component {
               Recommendations
             </Heading>
             <List>
-              <Appear><ListItem>Learn & understand React before going all in on Redux.</ListItem></Appear>
-              <Appear><ListItem>Use & enjoy Redux. It's stable, elegant, & has a huge community.</ListItem></Appear>
-              <Appear><ListItem>...but don't stop there. Stay curious and experiment.</ListItem></Appear>
+              <Appear>
+                <ListItem>Learn & understand React before going all in on Redux.</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>Use & enjoy Redux. It's stable, elegant, & has a huge community.</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>...but don't stop there. Stay curious and experiment.</ListItem>
+              </Appear>
             </List>
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
@@ -186,20 +265,85 @@ class Presentation extends Component {
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>Future Talk</Heading>
             <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Going Further with Functional</Heading>
-            <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Programming & Immutability in React & Redux</Heading>
+            <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Programming & Immutability</Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>In the meantime...</Heading>
             <List>
-              <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/acdlite/recompose'>recompose</a>, <a href='https://github.com/raisemarketplace/redux-loop'>redux-loop</a>, <a href='https://github.com/reactjs/reselect'>reselect</a>, <a href='https://github.com/paularmstrong/normalizr'>normalizr</a>, <a href='https://github.com/facebook/immutable-js'>immutable-js</a></ListItem>
               <Appear>
-                <ListItem>Explore more advanced middleware: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/yelouafi/redux-saga'>redux-saga</a>, <a href='https://github.com/redux-observable/redux-observable'>redux-observable</a>, <a href='https://github.com/acdlite/redux-rx'>redux-rx</a></ListItem>
+                <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;
+                  <a href={urls.recompose}>recompose</a>,&nbsp;
+                  <a href={urls.reduxLoop}>redux-loop</a>,&nbsp;
+                  <a href={urls.reselect}>reselect</a>,&nbsp;
+                  <a href={urls.normalizr}>normalizr</a>,&nbsp;
+                  <a href={urls.immutableJS}>immutable-js</a>
+                </ListItem>
               </Appear>
               <Appear>
-                <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp; &nbsp;<a href='https://github.com/facebook/relay'>relay</a>, <a href='https://github.com/mobxjs/mobx'>mobx</a>, reactive streams (<a href='https://github.com/ReactiveX/rxjs'>rxjs</a>, <a href='https://github.com/cujojs/most'>most</a>, <a href='https://github.com/staltz/xstream'>xstream</a>)</ListItem>
+                <ListItem>Explore more advanced middleware: <br />&nbsp;&nbsp;&nbsp;
+                  <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
+                  <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
+                  <a href={urls.reduxRx}>redux-rx</a>
+                </ListItem>
               </Appear>
               <Appear>
-                <ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp; &nbsp;<a href='http://cycle.js.org/'>Cycle.js</a>, <a href='http://clojure.org/about/clojurescript'>ClojureScript</a> & <a href='https://github.com/omcljs/om'>Om</a>, <a href='http://elm-lang.org/'>Elm</a>, <a href='http://www.purescript.org/'>PureScript</a>, <a href='https://facebook.github.io/reason/'>Reason</a></ListItem>
+                <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;
+                  <a href={urls.relay}>relay</a>,&nbsp;
+                  <a href={urls.mobx}>mobx</a>,&nbsp;
+                  reactive streams&nbsp;
+                  (<a href={urls.rxjs}>rxjs</a>,&nbsp;
+                  <a href={urls.most}>most</a>,&nbsp;
+                  <a href={urls.xstream}>xstream</a>)
+                </ListItem>
+              </Appear>
+              <ListItem style={{ visibility: 'hidden' }}>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp; &nbsp;
+                <a href={urls.cycle}>Cycle.js</a>,&nbsp;
+                <a href={urls.clojureScript}>ClojureScript</a>&nbsp;&&nbsp;
+                <a href={urls.om}>Om</a>,&nbsp;
+                <a href={urls.elm}>Elm</a>,&nbsp;
+                <a href={urls.pureScript}>PureScript</a>,&nbsp;
+                <a href={urls.reason}>Reason</a>
+              </ListItem>
+            </List>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.rxjsVsRedux01} margin='-50px auto 0 auto' height='606px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.rxjsVsRedux02} margin='0 auto' height='450px' />
+          </Slide>
+          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+            <Heading size={1} caps fit lineHeight={1} textColor='primary'>In the meantime...</Heading>
+            <List>
+              <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;
+                <a href={urls.recompose}>recompose</a>,&nbsp;
+                <a href={urls.reduxLoop}>redux-loop</a>,&nbsp;
+                <a href={urls.reselect}>reselect</a>,&nbsp;
+                <a href={urls.normalizr}>normalizr</a>,&nbsp;
+                <a href={urls.immutableJS}>immutable-js</a>
+              </ListItem>
+              <ListItem>Explore more advanced middleware: <br />&nbsp;&nbsp;&nbsp;
+                <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
+                <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
+                <a href={urls.reduxRx}>redux-rx</a>
+              </ListItem>
+              <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;
+                <a href={urls.relay}>relay</a>,&nbsp;
+                <a href={urls.mobx}>mobx</a>,&nbsp;
+                reactive streams&nbsp;
+                (<a href={urls.rxjs}>rxjs</a>,&nbsp;
+                <a href={urls.most}>most</a>,&nbsp;
+                <a href={urls.xstream}>xstream</a>)
+              </ListItem>
+              <Appear>
+                <ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp;&nbsp;
+                  <a href={urls.cycle}>Cycle.js</a>,&nbsp;
+                  <a href={urls.clojureScript}>ClojureScript</a>&nbsp;&&nbsp;
+                  <a href={urls.om}>Om</a>,&nbsp;
+                  <a href={urls.elm}>Elm</a>,&nbsp;
+                  <a href={urls.pureScript}>PureScript</a>,&nbsp;
+                  <a href={urls.reason}>Reason</a>
+                </ListItem>
               </Appear>
             </List>
           </Slide>
@@ -248,11 +392,11 @@ class Presentation extends Component {
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
-              Potential Topic Ideas
+              Topic Ideas for lightning or full talks
             </Heading>
             <List>
-              <ListItem>Working with React & Data Visualization</ListItem>
-              <ListItem>Working with React & Animation</ListItem>
+              <ListItem>Data Visualization with React & D3</ListItem>
+              <ListItem>Working with Animation in React</ListItem>
               <ListItem>An Overview of "CSS in JavaScript"</ListItem>
               <ListItem>Falcor, GraphQL, Relay, etc.</ListItem>
             </List>
