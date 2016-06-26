@@ -89,6 +89,9 @@ const urls = {
   elm: 'http://elm-lang.org/',
   pureScript: 'http://www.purescript.org/',
   reason: 'https://facebook.github.io/reason/',
+  flummox: 'https://facebook.github.io/reason/',
+  nuclearJS: 'https://facebook.github.io/reason/',
+  elmArchitecture: 'https://facebook.github.io/reason/',
 }
 
 preloader(images)
@@ -125,30 +128,44 @@ class Presentation extends Component {
           <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.noMoreVInMVC} margin='-100px auto 0 auto' height='800px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.fluxDiagram} margin='0 auto 0 auto' height='500px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.unidirectionalDataFlow} margin='0px auto 0 auto' height='500px' />
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.danAbramov} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.andrewClark} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
+          <Slide transition={['slide']} bgColor='tertiary'>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              Talk about specific influences/inspirations here.
+              3 Major Influences
             </Heading>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              Flummox, NuclearJS, & The Elm Architecture
-            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  <a href='https://github.com/acdlite/flummox'>Flummox</a>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  <a href='https://github.com/optimizely/nuclear-js'>nuclear-js</a>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  <a href='http://guide.elm-lang.org/architecture/'>The Elm Architecture</a>
+                </ListItem>
+              </Appear>
+            </List>
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.reduxDiagram} margin='0px auto 0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
+          <Slide transition={['slide']} bgColor='tertiary'>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
               The 3 principles of Redux
             </Heading>
@@ -165,26 +182,26 @@ class Presentation extends Component {
             </List>
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               Single source of truth
             </Heading>
-            <Text size={1} caps fit textColor='secondary' textFont='primary'>
+            <Text textColor='secondary' textFont='primary'>
               The state of your whole application is stored in an object tree within a single store.
             </Text>
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               State is read-only
             </Heading>
-            <Text size={1} caps fit textColor='secondary' textFont='primary'>
+            <Text textColor='secondary' textFont='primary'>
               The only way to mutate the state is to emit an action, an object describing what happened.
             </Text>
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               Changes are made with pure functions
             </Heading>
-            <Text size={1} caps fit textColor='secondary' textFont='primary'>
+            <Text textColor='secondary' textFont='primary'>
               To specify how the state tree is transformed by actions, you write pure reducers.
             </Text>
           </Slide>
