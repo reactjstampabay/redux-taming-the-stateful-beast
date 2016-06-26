@@ -83,6 +83,8 @@ const urls = {
   xstream: 'https://github.com/staltz/xstream',
   cycle: 'http://cycle.js.org/',
   clojureScript: 'http://clojure.org/about/clojurescript',
+  reagent: 'https://github.com/reagent-project/reagent',
+  reFrame: 'https://github.com/Day8/re-frame',
   om: 'https://github.com/omcljs/om',
   elm: 'http://elm-lang.org/',
   pureScript: 'http://www.purescript.org/',
@@ -271,7 +273,7 @@ class Presentation extends Component {
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>In the meantime...</Heading>
             <List>
               <Appear>
-                <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;
+                <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href={urls.recompose}>recompose</a>,&nbsp;
                   <a href={urls.reduxLoop}>redux-loop</a>,&nbsp;
                   <a href={urls.reselect}>reselect</a>,&nbsp;
@@ -280,14 +282,14 @@ class Presentation extends Component {
                 </ListItem>
               </Appear>
               <Appear>
-                <ListItem>Explore more advanced middleware: <br />&nbsp;&nbsp;&nbsp;
+                <ListItem>Explore more advanced middleware: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
                   <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
                   <a href={urls.reduxRx}>redux-rx</a>
                 </ListItem>
               </Appear>
               <Appear>
-                <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;
+                <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href={urls.relay}>relay</a>,&nbsp;
                   <a href={urls.mobx}>mobx</a>,&nbsp;
                   reactive streams&nbsp;
@@ -296,9 +298,11 @@ class Presentation extends Component {
                   <a href={urls.xstream}>xstream</a>)
                 </ListItem>
               </Appear>
-              <ListItem style={{ visibility: 'hidden' }}>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp; &nbsp;
-                <a href={urls.cycle}>Cycle.js</a>,&nbsp;
-                <a href={urls.clojureScript}>ClojureScript</a>&nbsp;&&nbsp;
+              <ListItem style={{ visibility: 'hidden' }}>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href={urls.cycle}>Cycle</a>,&nbsp;
+                <a href={urls.clojureScript}>ClojureScript</a>,&nbsp;
+                <a href={urls.reagent}>reagent</a>,&nbsp;
+                <a href={urls.reFrame}>re&#8209;frame</a>,&nbsp;
                 <a href={urls.om}>Om</a>,&nbsp;
                 <a href={urls.elm}>Elm</a>,&nbsp;
                 <a href={urls.pureScript}>PureScript</a>,&nbsp;
@@ -315,19 +319,19 @@ class Presentation extends Component {
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>In the meantime...</Heading>
             <List>
-              <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;
+              <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href={urls.recompose}>recompose</a>,&nbsp;
                 <a href={urls.reduxLoop}>redux-loop</a>,&nbsp;
                 <a href={urls.reselect}>reselect</a>,&nbsp;
                 <a href={urls.normalizr}>normalizr</a>,&nbsp;
                 <a href={urls.immutableJS}>immutable-js</a>
               </ListItem>
-              <ListItem>Explore more advanced middleware: <br />&nbsp;&nbsp;&nbsp;
+              <ListItem>Explore more advanced middleware: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
                 <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
                 <a href={urls.reduxRx}>redux-rx</a>
               </ListItem>
-              <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;
+              <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href={urls.relay}>relay</a>,&nbsp;
                 <a href={urls.mobx}>mobx</a>,&nbsp;
                 reactive streams&nbsp;
@@ -336,9 +340,11 @@ class Presentation extends Component {
                 <a href={urls.xstream}>xstream</a>)
               </ListItem>
               <Appear>
-                <ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp;&nbsp;
-                  <a href={urls.cycle}>Cycle.js</a>,&nbsp;
-                  <a href={urls.clojureScript}>ClojureScript</a>&nbsp;&&nbsp;
+                <ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href={urls.cycle}>Cycle</a>,&nbsp;
+                  <a href={urls.clojureScript}>ClojureScript</a>,&nbsp;
+                  <a href={urls.reagent}>reagent</a>,&nbsp;
+                  <a href={urls.reFrame}>re&#8209;frame</a>,&nbsp;
                   <a href={urls.om}>Om</a>,&nbsp;
                   <a href={urls.elm}>Elm</a>,&nbsp;
                   <a href={urls.pureScript}>PureScript</a>,&nbsp;
