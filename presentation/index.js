@@ -62,6 +62,12 @@ const images = {
   andrewClark: require('../assets/andrew-clark.png').replace('/', ''),
   fluxDiagram: require('../assets/flux-diagram.png').replace('/', ''),
   reduxDiagram: require('../assets/redux-diagram.png').replace('/', ''),
+  fluxLogo: require('../assets/flux-logo.png').replace('/', ''),
+  howPureFunctions: require('../assets/how-pure-functions.jpg').replace('/', ''),
+  julesMutableState: require('../assets/jules-mutable-state.png').replace('/', ''),
+  julesPureFunctions: require('../assets/jules-pure-functions.jpg').replace('/', ''),
+  pureFunctionsMindBlown: require('../assets/pure-functions-mind-blown.jpg').replace('/', ''),
+  toyStoryPureFunctions: require('../assets/toy-story-pure-functions.jpg').replace('/', ''),
 }
 
 const urls = {
@@ -70,6 +76,7 @@ const urls = {
   eggheadRedux01: 'https://egghead.io/courses/getting-started-with-redux',
   eggheadRedux02: 'https://egghead.io/courses/building-react-applications-with-idiomatic-redux',
   recompose: 'https://github.com/acdlite/recompose',
+  reduxActions: 'https://github.com/acdlite/redux-actions',
   reduxLoop: 'https://github.com/raisemarketplace/redux-loop',
   reselect: 'https://github.com/reactjs/reselect',
   normalizr: 'https://github.com/paularmstrong/normalizr',
@@ -90,9 +97,9 @@ const urls = {
   elm: 'http://elm-lang.org/',
   pureScript: 'http://www.purescript.org/',
   reason: 'https://facebook.github.io/reason/',
-  flummox: 'https://facebook.github.io/reason/',
-  nuclearJS: 'https://facebook.github.io/reason/',
-  elmArchitecture: 'https://facebook.github.io/reason/',
+  flummox: 'https://github.com/acdlite/flummox',
+  nuclearJS: 'https://github.com/optimizely/nuclear-js',
+  elmArchitecture: 'http://guide.elm-lang.org/architecture/',
 }
 
 preloader(images)
@@ -121,10 +128,26 @@ class Presentation extends Component {
             </BlockQuote>
           </Slide>
           <Slide transition={['zoom']} bgColor='primary'>
-            <Image src={images.wat} margin='-50px auto 0 auto' height='700px' />
+            <Image src={images.jackieChanWat} margin='0 auto' height='500px' />
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.jackieChanWat} margin='0 auto' height='500px' />
+            <Image src={images.wat} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
+          <Slide transition={['slide']} bgColor='primary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
+              Redux Creators
+            </Heading>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.danAbramov} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.andrewClark} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+              Redux Origins
+            </Heading>
           </Slide>
           <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.noMoreVInMVC} margin='-100px auto 0 auto' height='800px' />
@@ -135,30 +158,24 @@ class Presentation extends Component {
           <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.unidirectionalDataFlow} margin='0px auto 0 auto' height='500px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.danAbramov} margin='-50px auto 0 auto' height='700px' />
-          </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
-            <Image src={images.andrewClark} margin='-50px auto 0 auto' height='700px' />
-          </Slide>
           <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              3 Major Influences
+            <Heading size={1} caps fit textColor='primary' textFont='primary'>
+              3 Key Influences
             </Heading>
             <List>
               <Appear>
                 <ListItem>
-                  <a href='https://github.com/acdlite/flummox'>Flummox</a>
+                  <a href={urls.flummox}>flummox</a>
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  <a href='https://github.com/optimizely/nuclear-js'>nuclear-js</a>
+                  <a href={urls.nuclearJS}>nuclear-js</a>
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  <a href='http://guide.elm-lang.org/architecture/'>The Elm Architecture</a>
+                  <a href={urls.elmArchitecture}>The Elm Architecture</a>
                 </ListItem>
               </Appear>
             </List>
@@ -167,51 +184,124 @@ class Presentation extends Component {
             <Image src={images.reduxDiagram} margin='0px auto 0 auto' height='500px' />
           </Slide>
           <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+            <Heading size={1} caps fit textColor='primary' textFont='primary'>
               The 3 principles of Redux
             </Heading>
             <List>
               <Appear>
-                <ListItem>Single source of truth</ListItem>
+                <ListItem>There is always only a single source of truth</ListItem>
               </Appear>
               <Appear>
-                <ListItem>State is read-only</ListItem>
+                <ListItem>The application state is immutable (read-only)</ListItem>
               </Appear>
               <Appear>
-                <ListItem>Changes are made with pure functions</ListItem>
+                <ListItem>Changes to state are made via pure functions</ListItem>
               </Appear>
             </List>
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
-              Single source of truth
+              There is always only a single source of truth
             </Heading>
-            <Text textColor='secondary' textFont='primary'>
+            <Text textColor='secondary' textFont='primary' textAlign='left'>
               The state of your whole application is stored in an object tree within a single store.
             </Text>
           </Slide>
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
-              State is read-only
+              The application state is immutable (read-only)
             </Heading>
-            <Text textColor='secondary' textFont='primary'>
+            <Text textColor='secondary' textFont='primary' textAlign='left'>
               The only way to mutate the state is to emit an action, an object describing what happened.
             </Text>
           </Slide>
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.julesMutableState} margin='0 auto' height='500px' />
+          </Slide>
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
-              Changes are made with pure functions
+              Changes to state are made via pure functions
             </Heading>
-            <Text textColor='secondary' textFont='primary'>
+            <Text textColor='secondary' textFont='primary' textAlign='left'>
               To specify how the state tree is transformed by actions, you write pure reducers.
             </Text>
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              Go through the basic pieces & workflow of Redux
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.julesPureFunctions} margin='0 auto' height='500px' />
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+              A Pure function is stateless
             </Heading>
-            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-              State tree, Store, Actions, Reducers, middleware, etc.
+            <List>
+              <Appear>
+                <ListItem>
+                  Given the same input, will always return the same output.
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Produces no side effects.
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Relies on no external state.
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+              Benefits of Using Pure Functions
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Makes application flow easier to understand.
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Simplifies testing, functions are modular & self-contained.
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Enables powerful developer tools
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.pureFunctionsMindBlown} margin='0 auto' height='500px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.toyStoryPureFunctions} margin='0 auto' height='500px' />
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+              Redux Basics
+            </Heading>
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+              Actions
+            </Heading>
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+              Reducers
+            </Heading>
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+              Store
+            </Heading>
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+              Middleware
             </Heading>
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
@@ -249,15 +339,9 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.bruceLeeLimits} margin='-50px auto 0 auto' height='700px' />
-          </Slide>
           <Slide transition={['slide']} bgColor='tertiary'>
             <Heading size={1} caps fit textColor='primary' textFont='primary'>
-              Rethinking dogma
-            </Heading>
-            <Heading size={1} caps fit textColor='primary' textFont='primary'>
-              & <span style={{ color: theme.screen.colors.secondary }}>innovating</span>
+              <span style={{ color: theme.screen.colors.secondary }}>Progression</span>
             </Heading>
             <Heading size={1} caps fit textColor='primary' textFont='primary'>
                is what the React community
@@ -265,6 +349,9 @@ class Presentation extends Component {
             <Heading size={1} caps fit textColor='primary' textFont='primary'>
                is all about
             </Heading>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.bruceLeeLimits} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>
@@ -293,33 +380,34 @@ class Presentation extends Component {
               <Appear>
                 <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href={urls.recompose}>recompose</a>,&nbsp;
-                  <a href={urls.reduxLoop}>redux-loop</a>,&nbsp;
+                  <a href={urls.reduxActions}>redux-actions</a>,&nbsp;
                   <a href={urls.reselect}>reselect</a>,&nbsp;
                   <a href={urls.normalizr}>normalizr</a>,&nbsp;
                   <a href={urls.immutableJS}>immutable-js</a>
                 </ListItem>
               </Appear>
               <Appear>
-                <ListItem>Explore more advanced middleware: <br />&nbsp;&nbsp;&nbsp;&nbsp;
+                <ListItem>Explore more sophisticated async control flow: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
                   <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
-                  <a href={urls.reduxRx}>redux-rx</a>
+                  <a href={urls.reduxRx}>redux-rx</a>,&nbsp;
+                  <a href={urls.reduxLoop}>redux-loop</a>
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href={urls.relay}>relay</a>,&nbsp;
-                  <a href={urls.mobx}>mobx</a>,&nbsp;
-                  reactive streams&nbsp;
-                  (<a href={urls.rxjs}>rxjs</a>,&nbsp;
+                  <a href={urls.mobx}>mobx</a>, reactive streams (
+                  <a href={urls.rxjs}>rxjs</a>,&nbsp;
                   <a href={urls.most}>most</a>,&nbsp;
-                  <a href={urls.xstream}>xstream</a>)
+                  <a href={urls.xstream}>xstream</a>
+                  )
                 </ListItem>
               </Appear>
               <ListItem style={{ visibility: 'hidden' }}>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href={urls.cycle}>Cycle</a>,&nbsp;
                 <a href={urls.clojureScript}>ClojureScript</a>,&nbsp;
-                <a href={urls.reagent}>reagent</a>,&nbsp;
+                <a href={urls.reagent}>reagent</a>/
                 <a href={urls.reFrame}>re&#8209;frame</a>,&nbsp;
                 <a href={urls.om}>Om</a>,&nbsp;
                 <a href={urls.elm}>Elm</a>,&nbsp;
@@ -339,29 +427,30 @@ class Presentation extends Component {
             <List>
               <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href={urls.recompose}>recompose</a>,&nbsp;
-                <a href={urls.reduxLoop}>redux-loop</a>,&nbsp;
+                <a href={urls.reduxActions}>redux-actions</a>,&nbsp;
                 <a href={urls.reselect}>reselect</a>,&nbsp;
                 <a href={urls.normalizr}>normalizr</a>,&nbsp;
                 <a href={urls.immutableJS}>immutable-js</a>
               </ListItem>
-              <ListItem>Explore more advanced middleware: <br />&nbsp;&nbsp;&nbsp;&nbsp;
+              <ListItem>Explore more sophisticated async control flow: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
                 <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
-                <a href={urls.reduxRx}>redux-rx</a>
+                <a href={urls.reduxRx}>redux-rx</a>,&nbsp;
+                <a href={urls.reduxLoop}>redux-loop</a>
               </ListItem>
               <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href={urls.relay}>relay</a>,&nbsp;
-                <a href={urls.mobx}>mobx</a>,&nbsp;
-                reactive streams&nbsp;
-                (<a href={urls.rxjs}>rxjs</a>,&nbsp;
+                <a href={urls.mobx}>mobx</a>, reactive streams (
+                <a href={urls.rxjs}>rxjs</a>,&nbsp;
                 <a href={urls.most}>most</a>,&nbsp;
-                <a href={urls.xstream}>xstream</a>)
+                <a href={urls.xstream}>xstream</a>
+                )
               </ListItem>
               <Appear>
                 <ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href={urls.cycle}>Cycle</a>,&nbsp;
                   <a href={urls.clojureScript}>ClojureScript</a>,&nbsp;
-                  <a href={urls.reagent}>reagent</a>,&nbsp;
+                  <a href={urls.reagent}>reagent</a>/
                   <a href={urls.reFrame}>re&#8209;frame</a>,&nbsp;
                   <a href={urls.om}>Om</a>,&nbsp;
                   <a href={urls.elm}>Elm</a>,&nbsp;
