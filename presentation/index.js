@@ -207,7 +207,7 @@ class Presentation extends Component {
               The state of your whole application is stored in an object tree within a single store.
             </Text>
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
+          <Slide transition={['slide']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               The application state is immutable (read-only)
             </Heading>
@@ -218,7 +218,7 @@ class Presentation extends Component {
           <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.julesMutableState} margin='0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
+          <Slide transition={['slide']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               Changes to state are made via pure functions
             </Heading>
@@ -251,8 +251,8 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+          <Slide transition={['slide']} bgColor='primary'>
+            <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               Benefits of Using Pure Functions
             </Heading>
             <List>
@@ -268,43 +268,112 @@ class Presentation extends Component {
               </Appear>
               <Appear>
                 <ListItem>
-                  Enables powerful developer tools
+                  Enables the creation of powerful developer tools.
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.pureFunctionsMindBlown} margin='0 auto' height='500px' />
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
+              Redux Basics
+            </Heading>
+          </Slide>
+          <Slide transition={['slide']} bgColor='primary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='secondary' textFont='primary'>
+              Actions
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Information payloads telling the store "something happened"
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Plain JS objects with only one requirement: a <b>type</b>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Actions = messages describing events
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Dispatching actions = message passing
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
+              Reducers
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Functions specifying how to update app state
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Based on the previous state & the dispatched action
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Conceptually similar to the higher order function <b>reduce</b>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Reducers are written as <b>pure functions</b>
                 </ListItem>
               </Appear>
             </List>
           </Slide>
           <Slide transition={['zoom']} bgColor='primary'>
-            <Image src={images.pureFunctionsMindBlown} margin='0 auto' height='500px' />
-          </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.toyStoryPureFunctions} margin='0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
-              Redux Basics
-            </Heading>
-          </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
-              Actions
-            </Heading>
-          </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
-              Reducers
-            </Heading>
-          </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+          <Slide transition={['slide']} bgColor='primary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='secondary' textFont='primary'>
               Store
             </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  The store ties actions & reducers together
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Holds the single source of truth, the entire state in an object tree
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  It provides access in a read-only fashion via getState()
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Facilitates state updates via dispatch()
+                </ListItem>
+              </Appear>
+            </List>
           </Slide>
           <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               Middleware
             </Heading>
+            <Text textColor='secondary' textFont='primary' textAlign='left'>
+              The state of your whole application is stored in an object tree within a single store.
+            </Text>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['spin', 'slide']} bgColor='primary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Learning Resources
             </Heading>
