@@ -731,7 +731,7 @@ class Presentation extends Component {
               Redux Rehacked Lab
             </Heading>
             <Heading size={1} caps fit lineHeight={1.5} textColor='secondary'>
-              at The Hive, on July 6th
+              at The Hive, on July 13th
             </Heading>
           </Slide>
           <Slide transition={['spin']} bgColor='tertiary'>
