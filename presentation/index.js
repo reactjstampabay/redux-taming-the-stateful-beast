@@ -62,12 +62,16 @@ const images = {
   andrewClark: require('../assets/andrew-clark.png').replace('/', ''),
   fluxDiagram: require('../assets/flux-diagram.png').replace('/', ''),
   reduxDiagram: require('../assets/redux-diagram.png').replace('/', ''),
+  reduxDiagramMiddleware: require('../assets/redux-diagram-middleware.png').replace('/', ''),
   fluxLogo: require('../assets/flux-logo.png').replace('/', ''),
   howPureFunctions: require('../assets/how-pure-functions.jpg').replace('/', ''),
   julesMutableState: require('../assets/jules-mutable-state.png').replace('/', ''),
   julesPureFunctions: require('../assets/jules-pure-functions.jpg').replace('/', ''),
   pureFunctionsMindBlown: require('../assets/pure-functions-mind-blown.jpg').replace('/', ''),
   toyStoryPureFunctions: require('../assets/toy-story-pure-functions.jpg').replace('/', ''),
+  fluxDrawing: require('../assets/flux-drawing.jpg').replace('/', ''),
+  elmDrawing: require('../assets/elm-drawing.jpg').replace('/', ''),
+  reduxDrawing: require('../assets/redux-drawing.jpg').replace('/', ''),
 }
 
 const urls = {
@@ -100,6 +104,7 @@ const urls = {
   flummox: 'https://github.com/acdlite/flummox',
   nuclearJS: 'https://github.com/optimizely/nuclear-js',
   elmArchitecture: 'http://guide.elm-lang.org/architecture/',
+  thunkWiki: 'https://en.wikipedia.org/wiki/Thunk',
 }
 
 preloader(images)
@@ -181,7 +186,13 @@ class Presentation extends Component {
             </List>
           </Slide>
           <Slide transition={['zoom']} bgColor='primary'>
-            <Image src={images.reduxDiagram} margin='0px auto 0 auto' height='500px' />
+            <Image src={images.fluxDrawing} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.reduxDrawing} margin='-50px auto 0 auto' height='700px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.elmDrawing} margin='-50px auto 0 auto' height='700px' />
           </Slide>
           <Slide transition={['slide']} bgColor='tertiary'>
             <Heading size={1} caps fit textColor='primary' textFont='primary'>
@@ -268,6 +279,11 @@ class Presentation extends Component {
               </Appear>
               <Appear>
                 <ListItem>
+                  Better maintainability & composability
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
                   Enables the creation of powerful developer tools.
                 </ListItem>
               </Appear>
@@ -288,25 +304,35 @@ class Presentation extends Component {
             <List>
               <Appear>
                 <ListItem>
-                  Information payloads telling the store "something happened"
+                  Information payloads conveying that something happened
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  Plain JS objects with only one requirement: a <b>type</b>
+                  Plain JavaScript objects with only one requirement: a <b>type</b>
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  Actions = messages describing events
+                  Simply put, actions are just messages describing events
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  Dispatching actions = message passing
+                  ...and dispatching actions is just message passing
                 </ListItem>
               </Appear>
             </List>
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
+              Actions
+            </Heading>
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
+              Action Creators
+            </Heading>
           </Slide>
           <Slide transition={['slide']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
@@ -325,7 +351,7 @@ class Presentation extends Component {
               </Appear>
               <Appear>
                 <ListItem>
-                  Conceptually similar to the higher order function <b>reduce</b>
+                  Conceptually similar to the function argument in <b>reduce</b>
                 </ListItem>
               </Appear>
               <Appear>
@@ -345,35 +371,79 @@ class Presentation extends Component {
             <List>
               <Appear>
                 <ListItem>
-                  The store ties actions & reducers together
+                  The missing piece of the puzzle, tying it all together
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  Holds the single source of truth, the entire state in an object tree
+                  Holds the single source of truth (the state tree)
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  It provides access in a read-only fashion via getState()
+                  Provides read-only access via getState()
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  Facilitates state updates via dispatch()
+                  Allows state updates via dispatch()
                 </ListItem>
               </Appear>
             </List>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
+              Reminder:
+            </Heading>
+            <Heading size={1} lineHeight={1} caps fit textColor='secondary' textFont='primary'>
+              Unidirectional Data Flow
+            </Heading>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.reduxDiagram} margin='0px auto 0 auto' height='500px' />
           </Slide>
           <Slide transition={['slide']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               Middleware
             </Heading>
             <Text textColor='secondary' textFont='primary' textAlign='left'>
-              The state of your whole application is stored in an object tree within a single store.
+              <List>
+                <Appear>
+                  <ListItem>
+                    A hook into a pipeline providing some sort of extra functionality
+                  </ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem>
+                    In Redux, it provides a third-party extension point between <br />&nbsp;&nbsp;&nbsp;&nbsp;
+                    dispatching an action & the moment it reaches the reducer
+                  </ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem>
+                    Used for logging, handling async (like calling a web API), etc.
+                  </ListItem>
+                </Appear>
+              </List>
             </Text>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='primary'>
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.reduxDiagramMiddleware} margin='0px auto 0 auto' height='500px' />
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
+              Async Actions
+            </Heading>
+          </Slide>
+          <Slide transition={['slide']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
+              redux-thunk
+            </Heading>
+            <Text textColor='secondary' textFont='primary' textAlign='left'>
+              A <a href='urls.thunkWiki'>thunk</a> is a function that wraps an expression to delay its evaluation.
+            </Text>
+          </Slide>
+          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Learning Resources
             </Heading>
@@ -456,7 +526,7 @@ class Presentation extends Component {
                 </ListItem>
               </Appear>
               <Appear>
-                <ListItem>Explore more sophisticated async control flow: <br />&nbsp;&nbsp;&nbsp;&nbsp;
+                <ListItem>Explore more sophisticated async middleware: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
                   <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
                   <a href={urls.reduxRx}>redux-rx</a>,&nbsp;
@@ -501,7 +571,7 @@ class Presentation extends Component {
                 <a href={urls.normalizr}>normalizr</a>,&nbsp;
                 <a href={urls.immutableJS}>immutable-js</a>
               </ListItem>
-              <ListItem>Explore more sophisticated async control flow: <br />&nbsp;&nbsp;&nbsp;&nbsp;
+              <ListItem>Explore more sophisticated async middleware: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
                 <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
                 <a href={urls.reduxRx}>redux-rx</a>,&nbsp;
