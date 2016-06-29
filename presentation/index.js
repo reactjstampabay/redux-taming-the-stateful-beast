@@ -24,7 +24,7 @@ import {
 } from 'spectacle'
 
 // Import code presentation component
-// import CodeSlide from 'spectacle-code-slide'
+import CodeSlide from 'spectacle-code-slide'
 
 // Import image preloader util
 import preloader from 'spectacle/lib/utils/preloader'
@@ -105,6 +105,8 @@ const urls = {
   nuclearJS: 'https://github.com/optimizely/nuclear-js',
   elmArchitecture: 'http://guide.elm-lang.org/architecture/',
   thunkWiki: 'https://en.wikipedia.org/wiki/Thunk',
+  unidirectionalUIs: 'http://staltz.com/unidirectional-user-interface-architectures.html',
+  unidirectionalUIsYouTube: 'http://www.youtube.com/watch?v=1c6XiQsnh_U',
 }
 
 preloader(images)
@@ -119,26 +121,26 @@ class Presentation extends Component {
   render () {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={['zoom', 'slide']} transitionDuration={500}>
+        <Deck transition={['zoom', 'spin']} transitionDuration={500}>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.talkLogo} margin='-80px auto 0 auto' height='800px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.rootOfAllEvil} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <BlockQuote textColor='primary'>
               <Quote textColor='primary'>Redux is a predictable state container for JavaScript apps.</Quote>
               <Cite textColor='secondary'>redux.js.org</Cite>
             </BlockQuote>
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <Slide transition={['spin']}bgColor='primary'>
             <Image src={images.jackieChanWat} margin='0 auto' height='500px' />
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.wat} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               Redux Creators
             </Heading>
@@ -146,57 +148,76 @@ class Presentation extends Component {
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.danAbramov} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.andrewClark} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
               Redux Origins
             </Heading>
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.noMoreVInMVC} margin='-100px auto 0 auto' height='800px' />
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.fluxDiagram} margin='0 auto 0 auto' height='500px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.unidirectionalDataFlow} margin='0px auto 0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit textColor='primary' textFont='primary'>
               3 Key Influences
             </Heading>
             <List>
               <Appear>
                 <ListItem>
-                  <a href={urls.flummox}>flummox</a>
+                  <a target='_blank' href={urls.flummox}>flummox</a>
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  <a href={urls.nuclearJS}>nuclear-js</a>
+                  <a target='_blank' href={urls.nuclearJS}>nuclear-js</a>
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>
-                  <a href={urls.elmArchitecture}>The Elm Architecture</a>
+                  <a target='_blank' href={urls.elmArchitecture}>The Elm Architecture</a>
                 </ListItem>
               </Appear>
             </List>
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
-            <Image src={images.fluxDrawing} margin='-50px auto 0 auto' height='700px' />
+          <Slide transition={['spin']} bgColor='primary'>
+            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+            All of these are built on
+            </Heading>
+            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+            Unidirectional Data Flow
+            </Heading>
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
-            <Image src={images.reduxDrawing} margin='-50px auto 0 auto' height='700px' />
+            <Image src={images.fluxDrawing} margin='-50px auto 0 -100px' height='700px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
-            <Image src={images.elmDrawing} margin='-50px auto 0 auto' height='700px' />
+          <Slide transition={['spin']} bgColor='primary'>
+            <Image src={images.reduxDrawing} margin='-50px auto 0 -50px' height='700px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Image src={images.elmDrawing} margin='-50px auto 0 -100px' height='700px' />
+          </Slide>
+          <Slide transition={['spin']} bgColor='primary'>
+            <Heading size={1} caps fit textColor='secondary' textFont='primary'>
+            More on Unidirectional UI Architectures
+            </Heading>
+            <List>
+              <ListItem>Diagrams taken from <a target='_blank' href={urls.unidirectionalUIs}>this blog post </a>by André Staltz</ListItem>
+              <Appear>
+                <ListItem>There is also <a target='_blank' href={urls.unidirectionalUIsYouTube}>a talk based on the same material</a></ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit textColor='primary' textFont='primary'>
-              The 3 principles of Redux
+            The 3 Principles of Redux
             </Heading>
             <List>
               <Appear>
@@ -210,7 +231,7 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               There is always only a single source of truth
             </Heading>
@@ -218,7 +239,7 @@ class Presentation extends Component {
               The state of your whole application is stored in an object tree within a single store.
             </Text>
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               The application state is immutable (read-only)
             </Heading>
@@ -226,10 +247,10 @@ class Presentation extends Component {
               The only way to mutate the state is to emit an action, an object describing what happened.
             </Text>
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.julesMutableState} margin='0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               Changes to state are made via pure functions
             </Heading>
@@ -237,10 +258,10 @@ class Presentation extends Component {
               To specify how the state tree is transformed by actions, you write pure reducers.
             </Text>
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.julesPureFunctions} margin='0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='primary' textFont='primary'>
               A Pure function is stateless
             </Heading>
@@ -262,7 +283,7 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               Benefits of Using Pure Functions
             </Heading>
@@ -292,12 +313,12 @@ class Presentation extends Component {
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.pureFunctionsMindBlown} margin='0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               Redux Basics
             </Heading>
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
+          <Slide transition={['zoom']} bgColor='primary'>
             <Heading size={1} lineHeight={1} caps fit textColor='secondary' textFont='primary'>
               Actions
             </Heading>
@@ -324,17 +345,32 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
-              Actions
-            </Heading>
-          </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
-            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
-              Action Creators
-            </Heading>
-          </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/actions.example')}
+            ranges={[{ loc: [0, 0] }, { loc: [0, 7] }]} // stupid hacky fix
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/actions.example')}
+            ranges={[{ loc: [8, 15] }]}
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/actions.example')}
+            ranges={[{ loc: [16, 24] }]}
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/actions.example')}
+            ranges={[{ loc: [24, 31] }]}
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/actions.example')}
+            ranges={[{ loc: [32, 39] }]}
+          />
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               Reducers
             </Heading>
@@ -361,10 +397,25 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/reduce.example')}
+            ranges={[{ loc: [0, 5] }]} // stupid hacky fix
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/reducers.example')}
+            ranges={[{ loc: [0, 8] }]} // stupid hacky fix
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/reducers.example')}
+            ranges={[{ loc: [9, 18] }]} // stupid hacky fix
+          />
           <Slide transition={['zoom']} bgColor='primary'>
             <Image src={images.toyStoryPureFunctions} margin='0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Heading size={1} lineHeight={1} caps fit textColor='secondary' textFont='primary'>
               Store
             </Heading>
@@ -391,6 +442,11 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/store.example')}
+            ranges={[{ loc: [0, 0] }, { loc: [0, 7] }]} // stupid hacky fix
+          />
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               Reminder:
@@ -399,10 +455,10 @@ class Presentation extends Component {
               Unidirectional Data Flow
             </Heading>
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.reduxDiagram} margin='0px auto 0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               Middleware
             </Heading>
@@ -427,42 +483,52 @@ class Presentation extends Component {
               </List>
             </Text>
           </Slide>
-          <Slide transition={['zoom']} bgColor='primary'>
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/middleware.example')}
+            ranges={[{ loc: [0, 0] }, { loc: [0, 7] }]} // stupid hacky fix
+          />
+          <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.reduxDiagramMiddleware} margin='0px auto 0 auto' height='500px' />
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               Async Actions
             </Heading>
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               redux-thunk
             </Heading>
             <Text textColor='secondary' textFont='primary' textAlign='left'>
-              A <a href='urls.thunkWiki'>thunk</a> is a function that wraps an expression to delay its evaluation.
+              A <a target='_blank' href='urls.thunkWiki'>thunk</a> is a function that wraps an expression to delay its evaluation.
             </Text>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/thunk.example')}
+            ranges={[{ loc: [0, 0] }, { loc: [0, 7] }]} // stupid hacky fix
+          />
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Learning Resources
             </Heading>
             <List>
               <Appear>
-                <ListItem>Read the official docs: <a href={urls.reduxDocs}>redux.js.org</a></ListItem>
+                <ListItem>Read the official docs: <a target='_blank' href={urls.reduxDocs}>redux.js.org</a></ListItem>
               </Appear>
               <Appear>
                 <ListItem>Watch Dan Abramov's Videos on Egghead.io: <br />&nbsp;&nbsp; &nbsp;
-                  <a href={urls.eggheadRedux01}>Getting Started with Redux</a> <br />&nbsp;&nbsp; &nbsp;
-                  <a href={urls.eggheadRedux02}>Building React Applications with Idiomatic Redux</a>
+                  <a target='_blank' href={urls.eggheadRedux01}>Getting Started with Redux</a> <br />&nbsp;&nbsp; &nbsp;
+                  <a target='_blank' href={urls.eggheadRedux02}>Building React Applications with Idiomatic Redux</a>
                 </ListItem>
               </Appear>
               <Appear>
-                <ListItem>Check out <a href={urls.reduxExamples}>the examples in the redux GitHub repository</a></ListItem>
+                <ListItem>Check out <a target='_blank' href={urls.reduxExamples}>the examples in the redux GitHub repository</a></ListItem>
               </Appear>
             </List>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Recommendations
             </Heading>
@@ -478,7 +544,7 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
-          <Slide transition={['slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit textColor='primary' textFont='primary'>
               <span style={{ color: theme.screen.colors.secondary }}>Progression</span>
             </Heading>
@@ -489,10 +555,10 @@ class Presentation extends Component {
                is all about
             </Heading>
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Image src={images.bruceLeeLimits} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>
               Interested in
             </Heading>
@@ -500,7 +566,7 @@ class Presentation extends Component {
               diving deeper?
             </Heading>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>
               Tumbling down the
             </Heading>
@@ -508,112 +574,112 @@ class Presentation extends Component {
               <span style={{ color: theme.screen.colors.secondary }}>rabbit</span> hole...
             </Heading>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>Future Talk</Heading>
             <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Going Further with Functional</Heading>
             <Heading size={1} caps fit lineHeight={1} textColor='secondary'>Programming & Immutability</Heading>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>In the meantime...</Heading>
             <List>
               <Appear>
                 <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href={urls.recompose}>recompose</a>,&nbsp;
-                  <a href={urls.reduxActions}>redux-actions</a>,&nbsp;
-                  <a href={urls.reselect}>reselect</a>,&nbsp;
-                  <a href={urls.normalizr}>normalizr</a>,&nbsp;
-                  <a href={urls.immutableJS}>immutable-js</a>
+                  <a target='_blank' href={urls.recompose}>recompose</a>,&nbsp;
+                  <a target='_blank' href={urls.reduxActions}>redux-actions</a>,&nbsp;
+                  <a target='_blank' href={urls.reselect}>reselect</a>,&nbsp;
+                  <a target='_blank' href={urls.normalizr}>normalizr</a>,&nbsp;
+                  <a target='_blank' href={urls.immutableJS}>immutable-js</a>
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>Explore more sophisticated async middleware: <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
-                  <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
-                  <a href={urls.reduxRx}>redux-rx</a>,&nbsp;
-                  <a href={urls.reduxLoop}>redux-loop</a>
+                  <a target='_blank' href={urls.reduxSaga}>redux-saga</a>,&nbsp;
+                  <a target='_blank' href={urls.reduxObservable}>redux-observable</a>,&nbsp;
+                  <a target='_blank' href={urls.reduxRx}>redux-rx</a>,&nbsp;
+                  <a target='_blank' href={urls.reduxLoop}>redux-loop</a>
                 </ListItem>
               </Appear>
               <Appear>
                 <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href={urls.relay}>relay</a>,&nbsp;
-                  <a href={urls.mobx}>mobx</a>, reactive streams (
-                  <a href={urls.rxjs}>rxjs</a>,&nbsp;
-                  <a href={urls.most}>most</a>,&nbsp;
-                  <a href={urls.xstream}>xstream</a>
+                  <a target='_blank' href={urls.relay}>relay</a>,&nbsp;
+                  <a target='_blank' href={urls.mobx}>mobx</a>, reactive streams (
+                  <a target='_blank' href={urls.rxjs}>rxjs</a>,&nbsp;
+                  <a target='_blank' href={urls.most}>most</a>,&nbsp;
+                  <a target='_blank' href={urls.xstream}>xstream</a>
                   )
                 </ListItem>
               </Appear>
               <ListItem style={{ visibility: 'hidden' }}>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href={urls.cycle}>Cycle</a>,&nbsp;
-                <a href={urls.clojureScript}>ClojureScript</a>,&nbsp;
-                <a href={urls.reagent}>reagent</a>/
-                <a href={urls.reFrame}>re&#8209;frame</a>,&nbsp;
-                <a href={urls.om}>Om</a>,&nbsp;
-                <a href={urls.elm}>Elm</a>,&nbsp;
-                <a href={urls.pureScript}>PureScript</a>,&nbsp;
-                <a href={urls.reason}>Reason</a>
+                <a target='_blank' href={urls.cycle}>Cycle</a>,&nbsp;
+                <a target='_blank' href={urls.clojureScript}>ClojureScript</a>,&nbsp;
+                <a target='_blank' href={urls.reagent}>reagent</a>/
+                <a target='_blank' href={urls.reFrame}>re&#8209;frame</a>,&nbsp;
+                <a target='_blank' href={urls.om}>Om</a>,&nbsp;
+                <a target='_blank' href={urls.elm}>Elm</a>,&nbsp;
+                <a target='_blank' href={urls.pureScript}>PureScript</a>,&nbsp;
+                <a target='_blank' href={urls.reason}>Reason</a>
               </ListItem>
             </List>
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.rxjsVsRedux01} margin='-50px auto 0 auto' height='606px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Image src={images.rxjsVsRedux02} margin='0 auto' height='450px' />
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1} textColor='primary'>In the meantime...</Heading>
             <List>
               <ListItem>Try out complimentary libraries: <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href={urls.recompose}>recompose</a>,&nbsp;
-                <a href={urls.reduxActions}>redux-actions</a>,&nbsp;
-                <a href={urls.reselect}>reselect</a>,&nbsp;
-                <a href={urls.normalizr}>normalizr</a>,&nbsp;
-                <a href={urls.immutableJS}>immutable-js</a>
+                <a target='_blank' href={urls.recompose}>recompose</a>,&nbsp;
+                <a target='_blank' href={urls.reduxActions}>redux-actions</a>,&nbsp;
+                <a target='_blank' href={urls.reselect}>reselect</a>,&nbsp;
+                <a target='_blank' href={urls.normalizr}>normalizr</a>,&nbsp;
+                <a target='_blank' href={urls.immutableJS}>immutable-js</a>
               </ListItem>
               <ListItem>Explore more sophisticated async middleware: <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href={urls.reduxSaga}>redux-saga</a>,&nbsp;
-                <a href={urls.reduxObservable}>redux-observable</a>,&nbsp;
-                <a href={urls.reduxRx}>redux-rx</a>,&nbsp;
-                <a href={urls.reduxLoop}>redux-loop</a>
+                <a target='_blank' href={urls.reduxSaga}>redux-saga</a>,&nbsp;
+                <a target='_blank' href={urls.reduxObservable}>redux-observable</a>,&nbsp;
+                <a target='_blank' href={urls.reduxRx}>redux-rx</a>,&nbsp;
+                <a target='_blank' href={urls.reduxLoop}>redux-loop</a>
               </ListItem>
               <ListItem>Consider alternatives to Redux: <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href={urls.relay}>relay</a>,&nbsp;
-                <a href={urls.mobx}>mobx</a>, reactive streams (
-                <a href={urls.rxjs}>rxjs</a>,&nbsp;
-                <a href={urls.most}>most</a>,&nbsp;
-                <a href={urls.xstream}>xstream</a>
+                <a target='_blank' href={urls.relay}>relay</a>,&nbsp;
+                <a target='_blank' href={urls.mobx}>mobx</a>, reactive streams (
+                <a target='_blank' href={urls.rxjs}>rxjs</a>,&nbsp;
+                <a target='_blank' href={urls.most}>most</a>,&nbsp;
+                <a target='_blank' href={urls.xstream}>xstream</a>
                 )
               </ListItem>
               <Appear>
                 <ListItem>Look to other frameworks & languages for ideas: <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href={urls.cycle}>Cycle</a>,&nbsp;
-                  <a href={urls.clojureScript}>ClojureScript</a>,&nbsp;
-                  <a href={urls.reagent}>reagent</a>/
-                  <a href={urls.reFrame}>re&#8209;frame</a>,&nbsp;
-                  <a href={urls.om}>Om</a>,&nbsp;
-                  <a href={urls.elm}>Elm</a>,&nbsp;
-                  <a href={urls.pureScript}>PureScript</a>,&nbsp;
-                  <a href={urls.reason}>Reason</a>
+                  <a target='_blank' href={urls.cycle}>Cycle</a>,&nbsp;
+                  <a target='_blank' href={urls.clojureScript}>ClojureScript</a>,&nbsp;
+                  <a target='_blank' href={urls.reagent}>reagent</a>/
+                  <a target='_blank' href={urls.reFrame}>re&#8209;frame</a>,&nbsp;
+                  <a target='_blank' href={urls.om}>Om</a>,&nbsp;
+                  <a target='_blank' href={urls.elm}>Elm</a>,&nbsp;
+                  <a target='_blank' href={urls.pureScript}>PureScript</a>,&nbsp;
+                  <a target='_blank' href={urls.reason}>Reason</a>
                 </ListItem>
               </Appear>
             </List>
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Image src={images.carlSaganOpenMind} margin='-50px auto 0 auto' height='706px' />
           </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.bruceLeeAbsorb} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['zoom']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Image src={images.applause} margin='-50px auto 0 auto' height='700px' />
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['spin', 'spin']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Questions?
             </Heading>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Redux Rehacked Lab
             </Heading>
@@ -621,7 +687,7 @@ class Presentation extends Component {
               at The Hive, on July 6th
             </Heading>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Next talk on July 27th
             </Heading>
@@ -632,7 +698,7 @@ class Presentation extends Component {
               by James Schimmoeller
             </Heading>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               And an announcement...
             </Heading>
@@ -642,7 +708,7 @@ class Presentation extends Component {
               </Heading>
             </Appear>
           </Slide>
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
+          <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Topic Ideas for lightning or full talks
             </Heading>

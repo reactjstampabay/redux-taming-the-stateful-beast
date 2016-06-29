@@ -1,0 +1,5 @@
+// REDUCE
+
+const numArr = [0, 1, 2, 3, 4]
+const reducer = (prev, curr) => prev + curr
+const result = numArr.reduce(reducer)
