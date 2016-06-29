@@ -283,6 +283,9 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
+          <Slide transition={['spin']} bgColor='primary'>
+            <Image src={images.howPureFunctions} margin='0 auto' height='500px' />
+          </Slide>
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/purefunction.example')}
