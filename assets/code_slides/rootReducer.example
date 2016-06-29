@@ -8,12 +8,12 @@ import sensitivityMap from './sensitivitymap'
 // define individual app reducers here in reducers object
 const reducers = {
   hub,
-  sensitivityMap,
+  sensitivityMap
 }
 
 // combine reducers object with react-router reducer into one rootReducer
 const rootReducer = combineReducers(Object.assign({}, reducers, {
-  routing: routerReducer,
+  routing: routerReducer
 }))
 
 // export rootReducer object containing all state transformations for the app

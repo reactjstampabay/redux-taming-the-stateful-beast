@@ -442,6 +442,16 @@ class Presentation extends Component {
             code={require('raw!../assets/code_slides/reducers.example')}
             ranges={[{ loc: [9, 19] }]} // stupid hacky fix
           />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/rootReducer.example')}
+            ranges={[{ loc: [0, 12] }]} // stupid hacky fix
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/rootReducer.example')}
+            ranges={[{ loc: [13, 20] }]} // stupid hacky fix
+          />
           <Slide transition={['spin']} bgColor='primary'>
             <Heading size={1} lineHeight={1} caps fit textColor='secondary' textFont='primary'>
               Store

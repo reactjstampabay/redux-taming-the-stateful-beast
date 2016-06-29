@@ -1,6 +1,5 @@
 // A BASIC REDUCER
 
-import { combineReducers } from 'redux'
 import { VisibilityFilters } from './actions'
 
 const initialState = {
