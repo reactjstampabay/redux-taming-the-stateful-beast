@@ -189,7 +189,7 @@ class Presentation extends Component {
           </Slide>
           <Slide transition={['spin']} bgColor='primary'>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
-            All of these are built on
+            All of these things are built on
             </Heading>
             <Heading size={1} caps fit textColor='secondary' textFont='primary'>
             Unidirectional Data Flow
@@ -283,6 +283,11 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/purefunction.example')}
+            ranges={[{ loc: [0, 5] }]}
+          />
           <Slide transition={['spin']} bgColor='primary'>
             <Heading size={1} lineHeight={1.5} caps fit textColor='secondary' textFont='primary'>
               Benefits of Using Pure Functions
@@ -348,7 +353,7 @@ class Presentation extends Component {
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/actions.example')}
-            ranges={[{ loc: [0, 0] }, { loc: [0, 7] }]} // stupid hacky fix
+            ranges={[{ loc: [0, 7] }]} // stupid hacky fix
           />
           <CodeSlide transition={[]}
             lang='js'
@@ -390,11 +395,9 @@ class Presentation extends Component {
                   Conceptually similar to the function argument in <b>reduce</b>
                 </ListItem>
               </Appear>
-              <Appear>
-                <ListItem>
-                  Reducers are written as <b>pure functions</b>
-                </ListItem>
-              </Appear>
+              <ListItem style={{ visibility: 'hidden' }}>
+                Reducers are written as <b>pure functions</b>
+              </ListItem>
             </List>
           </Slide>
           <CodeSlide transition={[]}
@@ -402,6 +405,30 @@ class Presentation extends Component {
             code={require('raw!../assets/code_slides/reduce.example')}
             ranges={[{ loc: [0, 5] }]} // stupid hacky fix
           />
+          <Slide transition={['spin']} bgColor='tertiary'>
+            <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
+              Reducers
+            </Heading>
+            <List>
+              <ListItem>
+                Functions specifying how to update app state
+              </ListItem>
+              <ListItem>
+                Based on the previous state & the dispatched action
+              </ListItem>
+              <ListItem>
+                Conceptually similar to the function argument in <b>reduce</b>
+              </ListItem>
+              <Appear>
+                <ListItem>
+                  Reducers are written as <b>pure functions</b>
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide transition={['zoom']} bgColor='primary'>
+            <Image src={images.toyStoryPureFunctions} margin='0 auto' height='500px' />
+          </Slide>
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/reducers.example')}
@@ -410,11 +437,8 @@ class Presentation extends Component {
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/reducers.example')}
-            ranges={[{ loc: [9, 18] }]} // stupid hacky fix
+            ranges={[{ loc: [9, 19] }]} // stupid hacky fix
           />
-          <Slide transition={['zoom']} bgColor='primary'>
-            <Image src={images.toyStoryPureFunctions} margin='0 auto' height='500px' />
-          </Slide>
           <Slide transition={['spin']} bgColor='primary'>
             <Heading size={1} lineHeight={1} caps fit textColor='secondary' textFont='primary'>
               Store
@@ -442,11 +466,6 @@ class Presentation extends Component {
               </Appear>
             </List>
           </Slide>
-          <CodeSlide transition={[]}
-            lang='js'
-            code={require('raw!../assets/code_slides/store.example')}
-            ranges={[{ loc: [0, 0] }, { loc: [0, 7] }]} // stupid hacky fix
-          />
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               Reminder:
@@ -477,20 +496,25 @@ class Presentation extends Component {
                 </Appear>
                 <Appear>
                   <ListItem>
-                    Used for logging, handling async (like calling a web API), etc.
+                    Used for logging, <b>handling async</b> (like calling a web API), etc.
                   </ListItem>
                 </Appear>
               </List>
             </Text>
           </Slide>
-          <CodeSlide transition={[]}
-            lang='js'
-            code={require('raw!../assets/code_slides/middleware.example')}
-            ranges={[{ loc: [0, 0] }, { loc: [0, 7] }]} // stupid hacky fix
-          />
           <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.reduxDiagramMiddleware} margin='0px auto 0 auto' height='500px' />
           </Slide>
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/store.example')}
+            ranges={[{ loc: [0, 8] }]}
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/store.example')}
+            ranges={[{ loc: [8, 27] }]}
+          />
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
               Async Actions
@@ -507,8 +531,31 @@ class Presentation extends Component {
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/thunk.example')}
-            ranges={[{ loc: [0, 0] }, { loc: [0, 7] }]} // stupid hacky fix
+            ranges={[{ loc: [0, 10] }]}
           />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/thunk.example')}
+            ranges={[{ loc: [10, 20] }]}
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/thunk.example')}
+            ranges={[{ loc: [21, 30] }]}
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/thunk.example')}
+            ranges={[{ loc: [31, 40] }]}
+          />
+          <Slide transition={['spin']} bgColor='tertiary'>
+            <Heading size={1.5} lineHeight={1} caps fit textColor='primary' textFont='primary'>
+              Alternatively, there is redux-promise
+            </Heading>
+            <Text textColor='secondary' textFont='primary' textAlign='left'>
+              The second most simple alternative allows you to dispatch promises rather than wrapper functions (thunks)
+            </Text>
+          </Slide>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Learning Resources

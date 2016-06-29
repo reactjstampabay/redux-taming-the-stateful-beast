@@ -1,39 +1,26 @@
-// ACTIONS
+// A REAL WORLD STORE
 
-// Okay: using string literals
-dispatch({
-  type: 'ADD_TODO',
-  text: 'Build my first Redux app'
-})
+import { createStore, compose, applyMiddleware } from 'redux'
+import rootReducer from '../reducers'
+import thunkMiddleware from 'redux-thunk'
+import createLogger from 'redux-logger'
+const loggerMiddleware = createLogger()
 
-// Better: using constants
-const ADD_TODO = 'ADD_TODO'
-
-dispatch({
-  type: ADD_TODO,
-  text: 'Build my first Redux app'
-})
-
-// Good practice in large apps: importing actionTypes from an external file
-import { ADD_TODO, SOME_ACTION, SOME_OTHER_ACTION } from '../actionTypes'
-
-dispatch({
-  type: ADD_TODO,
-  text: 'Build my first Redux app'
-})
-
-// or import all named exports under an object alias
-import * as actionTypes from '../actionTypes'
-
-dispatch({
-  type: actionTypes.ADD_TODO,
-  text: 'Build my first Redux app'
-})
-
-// Optional: use actionCreators (functions returning actions)
-function addTodo(text) {
-  return {
-    type: ADD_TODO,
-    text
+export default function configureStore (initialState = {}) {
+  const store = createStore(rootReducer, initialState,
+    compose(
+      applyMiddleware(thunkMiddleware, loggerMiddleware),
+      window.devToolsExtension ? window.devToolsExtension() : (f) => f
+    )
+  )
+  // only runs in development mode
+  if (module.hot) {
+    // enable Webpack hot module replacement for reducers
+    module.hot.accept('../reducers', () => {
+      // dynamically require() updated rootReducer & hot swap it
+      const nextRootReducer = require('../reducers').default
+      store.replaceReducer(nextRootReducer)
+    })
   }
+  return store
 }

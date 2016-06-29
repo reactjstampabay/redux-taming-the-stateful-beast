@@ -1,39 +1,40 @@
-// ACTIONS
+// REDUX-THUNK
 
-// Okay: using string literals
-dispatch({
-  type: 'ADD_TODO',
-  text: 'Build my first Redux app'
-})
+// a drop-down list onChange handler
+export const hubHandleSelectStoreLevel = (newSelOpt) => {
+  return (dispatch) => {
+    // immediate & synchronous action dispatch to update dropdown-list
+    dispatch({
+      type: ActionTypes.HUB_SELECT_STORE_LEVEL,
+      payload: newSelOpt
+    })
+    const params = Object.freeze({
+      StoreName: newSelOpt.label,
+      OrderID: newSelOpt.value
+    })
+    // dispatching a thunk which calls a web API endpoint
+    // using a Promise-based http client (like fetch or axios)
+    // which eventually resolves as a synchronous update
+    dispatch(hubFetchStoreLevelDetails(params))
+  }
+}
 
-// Better: using constants
-const ADD_TODO = 'ADD_TODO'
+// another similar example
+function fetchPosts(reddit) {
+  return dispatch => {
+    dispatch(requestPosts(reddit))
+    return fetch(`https://www.reddit.com/r/${reddit}.json`)
+      .then(response => response.json())
+      .then(json => dispatch(receivePosts(reddit, json)))
+  }
+}
 
-dispatch({
-  type: ADD_TODO,
-  text: 'Build my first Redux app'
-})
-
-// Good practice in large apps: importing actionTypes from an external file
-import { ADD_TODO, SOME_ACTION, SOME_OTHER_ACTION } from '../actionTypes'
-
-dispatch({
-  type: ADD_TODO,
-  text: 'Build my first Redux app'
-})
-
-// or import all named exports under an object alias
-import * as actionTypes from '../actionTypes'
-
-dispatch({
-  type: actionTypes.ADD_TODO,
-  text: 'Build my first Redux app'
-})
-
-// Optional: use actionCreators (functions returning actions)
-function addTodo(text) {
+// and the actionCreator which triggers the synchronous reducer update
+function receivePosts(reddit, json) {
   return {
-    type: ADD_TODO,
-    text
+    type: RECEIVE_POSTS,
+    reddit,
+    posts: json.data.children.map(child => child.data),
+    receivedAt: Date.now()
   }
 }
