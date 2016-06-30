@@ -582,7 +582,7 @@ class Presentation extends Component {
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/thunk.example')}
-            ranges={[{ loc: [23, 31] }]}
+            ranges={[{ loc: [22, 31] }]}
           />
           <CodeSlide transition={[]}
             lang='js'

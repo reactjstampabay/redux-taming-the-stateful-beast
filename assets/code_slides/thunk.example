@@ -2,7 +2,7 @@
 
 // a drop-down list onChange handler
 export const hubHandleSelectStoreLevel = (newSelOpt) => {
-  return (dispatch) => {
+  return dispatch => {
     // immediate & synchronous action dispatch
     // to update dropdown-list
     dispatch({
