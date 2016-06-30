@@ -3,7 +3,8 @@
 // a drop-down list onChange handler
 export const hubHandleSelectStoreLevel = (newSelOpt) => {
   return (dispatch) => {
-    // immediate & synchronous action dispatch to update dropdown-list
+    // immediate & synchronous action dispatch
+    // to update dropdown-list
     dispatch({
       type: ActionTypes.HUB_SELECT_STORE_LEVEL,
       payload: newSelOpt
@@ -29,7 +30,8 @@ function fetchPosts(reddit) {
   }
 }
 
-// and the actionCreator which triggers the synchronous reducer update
+// and the actionCreator which triggers the
+// synchronous reducer update
 function receivePosts(reddit, json) {
   return {
     type: RECEIVE_POSTS,

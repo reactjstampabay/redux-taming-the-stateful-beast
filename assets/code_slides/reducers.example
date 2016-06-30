@@ -10,8 +10,11 @@ const initialState = {
 const todoApp = (state = initialState, action) => {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
-      // IMPORTANT: you create a new state object & merge in the updates
-      return Object.assign({}, state, { visibilityFilter: action.filter })
+      // IMPORTANT: you create a new state object
+      // & merge in the updates
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter 
+      })
     default:
       return state
   }

@@ -11,10 +11,12 @@ const reducers = {
   sensitivityMap
 }
 
-// combine reducers object with react-router reducer into one rootReducer
+// combine reducers object with react-router reducer
+// into one rootReducer
 const rootReducer = combineReducers(Object.assign({}, reducers, {
   routing: routerReducer
 }))
 
-// export rootReducer object containing all state transformations for the app
+// export rootReducer object containing all state
+// transformations for the app
 export default rootReducer

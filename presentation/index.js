@@ -107,6 +107,10 @@ const urls = {
   thunkWiki: 'https://en.wikipedia.org/wiki/Thunk',
   unidirectionalUIs: 'http://staltz.com/unidirectional-user-interface-architectures.html',
   unidirectionalUIsYouTube: 'http://www.youtube.com/watch?v=1c6XiQsnh_U',
+  joshTwitter: 'https://twitter.com/_joshburgess',
+  joshGitHub: 'https://github.com/joshburgess',
+  reactJSTampaBay: 'http://www.meetup.com/ReactJS-Tampa-Bay/',
+  reactJSTampaBayTwitter: 'https://twitter.com/reactjstampabay',
 }
 
 preloader(images)
@@ -124,6 +128,25 @@ class Presentation extends Component {
         <Deck transition={['zoom', 'spin']} transitionDuration={500}>
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Image src={images.talkLogo} margin='-80px auto 0 auto' height='800px' />
+          </Slide>
+          <Slide transition={['zoom']} bgColor='tertiary'>
+            <Heading size={1} caps fit textColor='primary' textFont='primary'>
+              By Josh Burgess
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Twitter: <a target='_blank' href={urls.joshTwitter}>@_joshburgess</a>,&nbsp;
+                  GitHub: <a target='_blank' href={urls.joshGitHub}>@joshburgess</a>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  For <a target='_blank' href={urls.reactJSTampaBay}>ReactJS Tampa Bay</a>,&nbsp;
+                  Twitter: <a target='_blank' href={urls.reactJSTampaBayTwitter}>@reactjstampabay</a>
+                </ListItem>
+              </Appear>
+            </List>
           </Slide>
           <Slide transition={['spin']} bgColor='primary'>
             <Image src={images.rootOfAllEvil} margin='-50px auto 0 auto' height='700px' />
@@ -366,17 +389,17 @@ class Presentation extends Component {
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/actions.example')}
-            ranges={[{ loc: [16, 24] }]}
+            ranges={[{ loc: [16, 25] }]}
           />
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/actions.example')}
-            ranges={[{ loc: [24, 31] }]}
+            ranges={[{ loc: [26, 33] }]}
           />
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/actions.example')}
-            ranges={[{ loc: [32, 39] }]}
+            ranges={[{ loc: [34, 41] }]}
           />
           <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
@@ -435,22 +458,22 @@ class Presentation extends Component {
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/reducers.example')}
-            ranges={[{ loc: [0, 8] }]} // stupid hacky fix
+            ranges={[{ loc: [0, 8] }]}
           />
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/reducers.example')}
-            ranges={[{ loc: [9, 19] }]} // stupid hacky fix
+            ranges={[{ loc: [9, 21] }]}
           />
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/rootReducer.example')}
-            ranges={[{ loc: [0, 12] }]} // stupid hacky fix
+            ranges={[{ loc: [0, 12] }]}
           />
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/rootReducer.example')}
-            ranges={[{ loc: [13, 20] }]} // stupid hacky fix
+            ranges={[{ loc: [13, 22] }]}
           />
           <Slide transition={['spin']} bgColor='primary'>
             <Heading size={1} lineHeight={1} caps fit textColor='secondary' textFont='primary'>
@@ -526,7 +549,12 @@ class Presentation extends Component {
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/store.example')}
-            ranges={[{ loc: [8, 27] }]}
+            ranges={[{ loc: [8, 17] }]}
+          />
+          <CodeSlide transition={[]}
+            lang='js'
+            code={require('raw!../assets/code_slides/store.example')}
+            ranges={[{ loc: [17, 29] }]}
           />
           <Slide transition={['zoom']} bgColor='tertiary'>
             <Heading size={1} lineHeight={1} caps fit textColor='primary' textFont='primary'>
@@ -544,22 +572,22 @@ class Presentation extends Component {
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/thunk.example')}
-            ranges={[{ loc: [0, 10] }]}
+            ranges={[{ loc: [0, 11] }]}
           />
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/thunk.example')}
-            ranges={[{ loc: [10, 20] }]}
+            ranges={[{ loc: [11, 21] }]}
           />
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/thunk.example')}
-            ranges={[{ loc: [21, 30] }]}
+            ranges={[{ loc: [23, 31] }]}
           />
           <CodeSlide transition={[]}
             lang='js'
             code={require('raw!../assets/code_slides/thunk.example')}
-            ranges={[{ loc: [31, 40] }]}
+            ranges={[{ loc: [32, 42] }]}
           />
           <Slide transition={['spin']} bgColor='tertiary'>
             <Heading size={1.5} lineHeight={1} caps fit textColor='primary' textFont='primary'>

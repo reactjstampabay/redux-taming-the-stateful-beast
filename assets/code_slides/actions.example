@@ -14,8 +14,10 @@ dispatch({
   text: 'Build my first Redux app'
 })
 
-// Good practice in large apps: importing actionTypes from an external file
-import { ADD_TODO, SOME_ACTION, SOME_OTHER_ACTION } from '../actionTypes'
+// Good practice in large apps: importing
+// actionTypes from an external file
+import { ADD_TODO, SOME_ACTION, SOME_OTHER_ACTION }
+from '../actionTypes'
 
 dispatch({
   type: ADD_TODO,
